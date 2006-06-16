@@ -1,0 +1,167 @@
+mdbtools
+--------------------------------------------
+MDB Tools is an open source suite of libraries and utilities to
+read (and soon write) MDB (i.e. Access) database files.
+
+Runtime requirements:
+  cygwin-1.5.19-4
+  glib2-2.8.6-1
+  libncurses8-5.5-2
+  libreadline6-5.1-5
+
+Additional gmdb2 requirements:
+  gtk2-x11-2.8.13-1
+  libglade2-2.5.1-1
+  libgnome2-2.12.0.1-1
+  libgnomeui2-2.12.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.19-4
+  autoconf2.5-2.59-3
+  automake1.9-1.9.6-1
+  binutils-20050610-1
+  bison-20030307-1
+  cygport-0.1.6-1
+  flex-2.5.4a-4
+  gawk-3.1.5-2
+  gcc-core-3.4.4-1
+  libtool1.5-1.5.20-2
+  make-3.80-1
+  pkg-config-0.20-1
+  sed-4.1.4-1
+  w32api-3.3-1
+
+Canonical homepage:
+  http://mdbtools.sourceforge.net/
+
+Canonical download:
+  http://prdownloads.sourceforge.net/mdbtools/
+
+-------------------------------------------
+
+Build instructions:
+  unpack mdbtools-0.5-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./mdbtools-0.5-X.cygport all
+
+This will create:
+  /usr/src/gmdb2-0.5-X.tar.bz2
+  /usr/src/libmdb-devel-0.5-X.tar.bz2
+  /usr/src/libmdb0-0.5-X.tar.bz2
+  /usr/src/mdbtools-0.5-X.tar.bz2
+  /usr/src/mdbtools-0.5-X-src.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+  /usr/bin/mdb-array.exe
+  /usr/bin/mdb-dump.exe
+  /usr/bin/mdb-export.exe
+  /usr/bin/mdb-header.exe
+  /usr/bin/mdb-parsecsv.exe
+  /usr/bin/mdb-schema.exe
+  /usr/bin/mdb-sql.exe
+  /usr/bin/mdb-tables.exe
+  /usr/bin/mdb-ver.exe
+  /usr/bin/prcat.exe
+  /usr/bin/prdata.exe
+  /usr/bin/prdump.exe
+  /usr/bin/prindex.exe
+  /usr/bin/prkkd.exe
+  /usr/bin/prole.exe
+  /usr/bin/prtable.exe
+  /usr/bin/unittest.exe
+  /usr/bin/updrow.exe
+  /usr/share/doc/Cygwin/mdbtools-0.5.README
+  /usr/share/doc/mdbtools-0.5/AUTHORS
+  /usr/share/doc/mdbtools-0.5/ChangeLog
+  /usr/share/doc/mdbtools-0.5/COPYING
+  /usr/share/doc/mdbtools-0.5/COPYING.LIB
+  /usr/share/doc/mdbtools-0.5/HACKING
+  /usr/share/doc/mdbtools-0.5/html/faq.html
+  /usr/share/doc/mdbtools-0.5/INSTALL
+  /usr/share/doc/mdbtools-0.5/NEWS
+  /usr/share/doc/mdbtools-0.5/README
+  /usr/share/doc/mdbtools-0.5/TODO
+  /usr/share/man/man1/mdb-export.1.gz
+  /usr/share/man/man1/mdb-schema.1.gz
+  /usr/share/man/man1/mdb-sql.1.gz
+  /usr/share/man/man1/mdb-tables.1.gz
+  /usr/share/man/man1/mdb-ver.1.gz
+
+Files included in the libmdb0 package:
+
+  /usr/bin/cygmdb-0.dll
+  /usr/bin/cygmdbodbc-0.dll
+  /usr/bin/cygmdbsql-0.dll
+
+Files included in the libmdb-devel package:
+
+  /usr/include/connectparams.h
+  /usr/include/mdbodbc.h
+  /usr/include/mdbsql.h
+  /usr/include/mdbtools.h
+  /usr/lib/libmdb.a
+  /usr/lib/libmdb.dll.a
+  /usr/lib/libmdb.la
+  /usr/lib/libmdbodbc.a
+  /usr/lib/libmdbodbc.dll.a
+  /usr/lib/libmdbodbc.la
+  /usr/lib/libmdbsql.a
+  /usr/lib/libmdbsql.dll.a
+  /usr/lib/libmdbsql.la
+
+Files included in the gmdb2 package:
+
+  /usr/bin/gmdb2.exe
+  /usr/share/gmdb/glade/code.xpm
+  /usr/share/gmdb/glade/debug.xpm
+  /usr/share/gmdb/glade/form_big.xpm
+  /usr/share/gmdb/glade/forms.xpm
+  /usr/share/gmdb/glade/gmdb-debug.glade
+  /usr/share/gmdb/glade/gmdb-export.glade
+  /usr/share/gmdb/glade/gmdb-prefs.glade
+  /usr/share/gmdb/glade/gmdb-props.glade
+  /usr/share/gmdb/glade/gmdb-schema.glade
+  /usr/share/gmdb/glade/gmdb-sql-file.glade
+  /usr/share/gmdb/glade/gmdb-sql.glade
+  /usr/share/gmdb/glade/gmdb.glade
+  /usr/share/gmdb/glade/logo.xpm
+  /usr/share/gmdb/glade/macro_big.xpm
+  /usr/share/gmdb/glade/macros.xpm
+  /usr/share/gmdb/glade/module_big.xpm
+  /usr/share/gmdb/glade/pk.xpm
+  /usr/share/gmdb/glade/query.xpm
+  /usr/share/gmdb/glade/query_big.xpm
+  /usr/share/gmdb/glade/report_big.xpm
+  /usr/share/gmdb/glade/reports.xpm
+  /usr/share/gmdb/glade/stock_export-16.png
+  /usr/share/gmdb/glade/stock_export.png
+  /usr/share/gmdb/glade/table.xpm
+  /usr/share/gmdb/glade/table_big.xpm
+  /usr/share/gnome/help/gmdb/C/figures/gmdb2_window.png
+  /usr/share/gnome/help/gmdb/C/legal.xml
+
+--------------------
+
+Port Notes:
+
+----- version 0.5-3 -----
+gmdb2 is now working and included, in a separate package.
+
+----- version 0.5-2 -----
+Rebuilt with gcc-3.4 (thanks to compilation patch from Gentoo) and
+updated versions of dependent libraries.
+gmdb2 is still not included, as it depends on glade_xml_signal_autoconnect,
+which doesn't work on Win32.
+
+----- version 0.5-1 -----
+Initial release for Cygwin.  gmdb2 is not included, as the GNOME 2 
+libraries have yet to be included in the distro.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
