@@ -1,0 +1,24 @@
+inherit gnome2
+
+DESCRIPTION="MSAccess Database libraries and tools"
+HOMEPAGE="http://mdbtools.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+PATCH_URI="mirror://portage/app-office/mdbtools/files/${P/pre/_pre}-gcc34.patch"
+
+PKG_NAMES="${PN} libmdb0 libmdb-devel gmdb2"
+PKG_HINTS="setup runtime devel gnome"
+PKG_CONTENTS[0]='--exclude=gmdb2.exe usr/bin/*.exe usr/share/doc/ usr/share/man/'
+PKG_CONTENTS[1]='usr/bin/*.dll'
+PKG_CONTENTS[2]='usr/include/ usr/lib/'
+PKG_CONTENTS[3]='etc/ usr/bin/gmdb2.exe usr/share/gmdb/ usr/share/gnome/ usr/share/omf/'
+
+DIFF_EXCLUDES="acinclude.m4"
+
+src_compile() {
+	cd ${S}
+	rm -f acinclude.m4
+	touch omf.make
+	gnome2_autoreconf
+	cd ${B}
+	gnome2_compile --enable-sql --with-unixodbc=/usr
+}
