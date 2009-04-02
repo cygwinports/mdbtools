@@ -1,5 +1,6 @@
 category: Database
-requires: cygwin glib2 libmdb0 libncurses8 libreadline6
-sdesc: "Utilities for reading and querying MDB databases"
+requires: cygwin libgcc1 libglib2.0_0
+external-source: mdbtools
+sdesc: "Libraries for reading MDB databases (runtime)"
 ldesc: "MDB Tools is an open source suite of libraries and utilities 
 to read (and soon write) MDB database files."

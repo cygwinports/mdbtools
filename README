@@ -4,39 +4,41 @@ MDB Tools is an open source suite of libraries and utilities to
 read (and soon write) MDB (i.e. Access) database files.
 
 Runtime requirements:
-  cygwin-1.5.23-2
-  glib2-2.12.4-1
-  libncurses8-5.5-3
-  libreadline6-5.2.1-4
+  cygwin-1.7.0-44
+  libgcc1-4.3.2-2
+  libglib2.0_0-2.20.0-1
+  libncurses9-5.7-13
+  libreadline6-5.2.13-11
 
 Additional gmdb2 requirements:
-  gtk2-x11-2.10.6-1
-  libglade2-2.6.0-1
-  libgnome2-2.16.0-1
-  libgnomeui2-2.16.1-1
+  libgtk2.0_0-2.16.0-1
+  libglade2.0_0-2.6.4-1
+  libgnome2_0-2.26.0-1
+  libgnomeui2_0-2.24.1-1
+  libintl8-0.17-10
+  libpango1.0_0-1.24.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.23-2
-  autoconf2.5-2.60-2
-  automake1.9-1.9.6-2
-  binutils-20060817-1
+  autoconf2.5-2.63-10
+  automake1.7-1.7.9-10
+  binutils-20080624-2
   bison-2.3-1
-  cygport-0.2.7-1
-  flex-2.5.33-1
-  gawk-3.1.5-4
-  gcc-core-3.4.4-3
-  libtool1.5-1.5.23a-2
-  make-3.81-1
-  pkg-config-0.21-1
+  cygport-0.9.6-1
+  flex-2.5.35-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  libtool-2.2.7a-11
+  make-3.81-2
+  pkg-config-0.23a-2
   sed-4.1.5-2
-  w32api-3.7-1
+  w32api-3.13-1
 
 Canonical homepage:
   http://mdbtools.sourceforge.net/
 
 Canonical download:
-  http://prdownloads.sourceforge.net/mdbtools/
+  http://downloads.sourceforge.net/mdbtools/
 
 -------------------------------------------
 
@@ -78,16 +80,14 @@ Files included in the binary packages:
   /usr/bin/prtable.exe
   /usr/bin/unittest.exe
   /usr/bin/updrow.exe
-  /usr/share/doc/Cygwin/mdbtools-0.6pre1.README
-  /usr/share/doc/mdbtools-0.6pre1/AUTHORS
-  /usr/share/doc/mdbtools-0.6pre1/COPYING
-  /usr/share/doc/mdbtools-0.6pre1/COPYING.LIB
-  /usr/share/doc/mdbtools-0.6pre1/ChangeLog
-  /usr/share/doc/mdbtools-0.6pre1/HACKING
-  /usr/share/doc/mdbtools-0.6pre1/INSTALL
-  /usr/share/doc/mdbtools-0.6pre1/NEWS
-  /usr/share/doc/mdbtools-0.6pre1/README
-  /usr/share/doc/mdbtools-0.6pre1/TODO
+  /usr/share/doc/mdbtools/AUTHORS
+  /usr/share/doc/mdbtools/COPYING
+  /usr/share/doc/mdbtools/COPYING.LIB
+  /usr/share/doc/mdbtools/ChangeLog
+  /usr/share/doc/mdbtools/HACKING
+  /usr/share/doc/mdbtools/NEWS
+  /usr/share/doc/mdbtools/README
+  /usr/share/doc/mdbtools/TODO
   /usr/share/man/man1/mdb-export.1.gz
   /usr/share/man/man1/mdb-schema.1.gz
   /usr/share/man/man1/mdb-sql.1.gz
@@ -117,8 +117,8 @@ Files included in the binary packages:
   /usr/lib/pkgconfig/libmdbsql.pc
 
 (gmdb2)
-  /etc/postinstall/mdbtools.sh
   /usr/bin/gmdb2.exe
+  /usr/share/applications/gmdb2.desktop
   /usr/share/gmdb/glade/code.xpm
   /usr/share/gmdb/glade/debug.xpm
   /usr/share/gmdb/glade/form_big.xpm
@@ -147,28 +147,14 @@ Files included in the binary packages:
   /usr/share/gnome/help/gmdb/C/gmdb.xml
   /usr/share/gnome/help/gmdb/C/legal.xml
   /usr/share/omf/mdbtools/gmdb-C.omf
+  /usr/share/pixmaps/gmdb2.xpm
 
 --------------------
 
 Port Notes:
 
------ version 0.6pre1-1 -----
-Version *and ABI* bump.
-Upstream does not use any libtool versioning.  Packages dependent on
-libmdb0 MUST be recompiled.
-
------ version 0.5-3 -----
-gmdb2 is now working and included, in a separate package.
-
------ version 0.5-2 -----
-Rebuilt with gcc-3.4 (thanks to compilation patch from Gentoo) and
-updated versions of dependent libraries.
-gmdb2 is still not included, as it depends on glade_xml_signal_autoconnect,
-which doesn't work on Win32.
-
------ version 0.5-1 -----
-Initial release for Cygwin.  gmdb2 is not included, as the GNOME 2 
-libraries have yet to be included in the distro.
+----- version 0.6pre1-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
