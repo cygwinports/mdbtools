@@ -1,5 +1,5 @@
 category: Database Gnome
-requires: libgcc1 libglib2.0_0 libgtk2.0_0 libglade2.0_0 libgnome2_0 libgnomeui2_0 libintl8 libmdb0 libpango1.0_0
+requires: libgcc1 libglib2.0_0 libgdk_pixbuf2.0_0 libgtk2.0_0 libglade2.0_0 libgnome2_0 libgnomeui2_0 libintl8 libmdb1 libpango1.0_0
 external-source: mdbtools
 sdesc: "GNOME frontend for reading and querying MDB databases"
 ldesc: "MDB Tools is an open source suite of libraries and utilities 

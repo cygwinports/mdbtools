@@ -4,35 +4,34 @@ MDB Tools is an open source suite of libraries and utilities to
 read (and soon write) MDB (i.e. Access) database files.
 
 Runtime requirements:
-  cygwin-1.7.0-44
-  libgcc1-4.3.2-2
-  libglib2.0_0-2.20.0-1
-  libncurses9-5.7-13
-  libreadline6-5.2.13-11
-
-Additional gmdb2 requirements:
-  libgtk2.0_0-2.16.0-1
+  cygwin-1.7.5-1
+  libgcc1-4.3.4-3
+  libglib2.0_0-2.22.4-2
+  libiodbc2-3.52.7-1
+  libreadline7-6.0.3-2
+(gmdb2)
+  libgdk_pixbuf2.0_0-2.18.6-1
   libglade2.0_0-2.6.4-1
-  libgnome2_0-2.26.0-1
-  libgnomeui2_0-2.24.1-1
-  libintl8-0.17-10
-  libpango1.0_0-1.24.0-1
+  libgnome2_0-2.28.0-1
+  libgnomeui2_0-2.24.2-1
+  libgtk2.0_0-2.18.6-1
+  libintl8-0.17-11
+  libpango1.0_0-1.26.2-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-10
-  automake1.7-1.7.9-10
-  binutils-20080624-2
-  bison-2.3-1
-  cygport-0.9.6-1
+  autoconf2.5-2.65-1
+  automake1.11-1.11.1-1
+  binutils-2.20.51-2
+  bison-2.4.2-1
+  cygport-0.9.84-1
   flex-2.5.35-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  libtool-2.2.7a-11
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-3
+  gnome-common-2.28.0-2
+  libtool-2.2.7a-15
   make-3.81-2
-  pkg-config-0.23a-2
-  sed-4.1.5-2
-  w32api-3.13-1
+  pkg-config-0.23b-10
 
 Canonical homepage:
   http://mdbtools.sourceforge.net/
@@ -43,115 +42,26 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack mdbtools-0.6pre1-X-src.tar.bz2
+  unpack mdbtools-20070318-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./mdbtools-0.6pre1-X.cygport all
+  cygport ./mdbtools-20070318-X.cygport all
 
 This will create:
-  /usr/src/gmdb2-0.6pre1-X.tar.bz2
-  /usr/src/libmdb-devel-0.6pre1-X.tar.bz2
-  /usr/src/libmdb0-0.6pre1-X.tar.bz2
-  /usr/src/mdbtools-0.6pre1-X.tar.bz2
-  /usr/src/mdbtools-0.6pre1-X-src.tar.bz2
+  /usr/src/gmdb2-20070318-X.tar.bz2
+  /usr/src/libmdb-devel-20070318-X.tar.bz2
+  /usr/src/libmdb1-20070318-X.tar.bz2
+  /usr/src/mdbtools-20070318-X.tar.bz2
+  /usr/src/mdbtools-20070318-X-src.tar.bz2
+  /usr/src/odbc-mdb-20070318-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-  /usr/bin/mdb-array.exe
-  /usr/bin/mdb-export.exe
-  /usr/bin/mdb-header.exe
-  /usr/bin/mdb-hexdump.exe
-  /usr/bin/mdb-import.exe
-  /usr/bin/mdb-parsecsv.exe
-  /usr/bin/mdb-prop.exe
-  /usr/bin/mdb-schema.exe
-  /usr/bin/mdb-sql.exe
-  /usr/bin/mdb-tables.exe
-  /usr/bin/mdb-ver.exe
-  /usr/bin/prcat.exe
-  /usr/bin/prdata.exe
-  /usr/bin/prdump.exe
-  /usr/bin/prindex.exe
-  /usr/bin/prkkd.exe
-  /usr/bin/prole.exe
-  /usr/bin/prtable.exe
-  /usr/bin/unittest.exe
-  /usr/bin/updrow.exe
-  /usr/share/doc/mdbtools/AUTHORS
-  /usr/share/doc/mdbtools/COPYING
-  /usr/share/doc/mdbtools/COPYING.LIB
-  /usr/share/doc/mdbtools/ChangeLog
-  /usr/share/doc/mdbtools/HACKING
-  /usr/share/doc/mdbtools/NEWS
-  /usr/share/doc/mdbtools/README
-  /usr/share/doc/mdbtools/TODO
-  /usr/share/man/man1/mdb-export.1.gz
-  /usr/share/man/man1/mdb-schema.1.gz
-  /usr/share/man/man1/mdb-sql.1.gz
-  /usr/share/man/man1/mdb-tables.1.gz
-  /usr/share/man/man1/mdb-ver.1.gz
-
-(libmdb0)
-  /usr/bin/cygmdb-0.dll
-  /usr/bin/cygmdbodbc-0.dll
-  /usr/bin/cygmdbsql-0.dll
-
-(libmdb-devel)
-  /usr/include/connectparams.h
-  /usr/include/gmdb.h
-  /usr/include/mdbodbc.h
-  /usr/include/mdbprivate.h
-  /usr/include/mdbsql.h
-  /usr/include/mdbtools.h
-  /usr/include/mdbver.h
-  /usr/lib/libmdb.dll.a
-  /usr/lib/libmdb.la
-  /usr/lib/libmdbodbc.dll.a
-  /usr/lib/libmdbodbc.la
-  /usr/lib/libmdbsql.dll.a
-  /usr/lib/libmdbsql.la
-  /usr/lib/pkgconfig/libmdb.pc
-  /usr/lib/pkgconfig/libmdbsql.pc
-
-(gmdb2)
-  /usr/bin/gmdb2.exe
-  /usr/share/applications/gmdb2.desktop
-  /usr/share/gmdb/glade/code.xpm
-  /usr/share/gmdb/glade/debug.xpm
-  /usr/share/gmdb/glade/form_big.xpm
-  /usr/share/gmdb/glade/forms.xpm
-  /usr/share/gmdb/glade/gmdb-debug.glade
-  /usr/share/gmdb/glade/gmdb-export.glade
-  /usr/share/gmdb/glade/gmdb-prefs.glade
-  /usr/share/gmdb/glade/gmdb-props.glade
-  /usr/share/gmdb/glade/gmdb-schema.glade
-  /usr/share/gmdb/glade/gmdb-sql-file.glade
-  /usr/share/gmdb/glade/gmdb-sql.glade
-  /usr/share/gmdb/glade/gmdb.glade
-  /usr/share/gmdb/glade/logo.xpm
-  /usr/share/gmdb/glade/macro_big.xpm
-  /usr/share/gmdb/glade/macros.xpm
-  /usr/share/gmdb/glade/module_big.xpm
-  /usr/share/gmdb/glade/pk.xpm
-  /usr/share/gmdb/glade/query.xpm
-  /usr/share/gmdb/glade/query_big.xpm
-  /usr/share/gmdb/glade/report_big.xpm
-  /usr/share/gmdb/glade/reports.xpm
-  /usr/share/gmdb/glade/stock_export-16.png
-  /usr/share/gmdb/glade/stock_export.png
-  /usr/share/gmdb/glade/table.xpm
-  /usr/share/gmdb/glade/table_big.xpm
-  /usr/share/gnome/help/gmdb/C/gmdb.xml
-  /usr/share/gnome/help/gmdb/C/legal.xml
-  /usr/share/omf/mdbtools/gmdb-C.omf
-  /usr/share/pixmaps/gmdb2.xpm
-
---------------------
-
 Port Notes:
+
+----- version 20070318-1 -----
+Update to latest CVS snapshot.
 
 ----- version 0.6pre1-10 -----
 Initial release for Cygwin 1.7.

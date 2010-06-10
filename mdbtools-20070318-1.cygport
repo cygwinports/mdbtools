@@ -1,0 +1,41 @@
+CVS_URI=":pserver:anonymous@mdbtools.cvs.sourceforge.net:/cvsroot/mdbtools"
+inherit gnome2 cvs
+
+DESCRIPTION="MSAccess Database libraries and tools"
+HOMEPAGE="http://mdbtools.sourceforge.net/"
+#SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+debpatch="http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7"
+PATCH_URI="
+	${debpatch}/015-allsyms.patch
+	${debpatch}/025-treeviewmodel.patch
+	${debpatch}/035-filelocals.patch
+	${debpatch}/041-eggiconlist.patch
+	${debpatch}/045-aboutdialog.patch
+	${debpatch}/056-libmdb-data.patch
+	${debpatch}/070-unixodbc-api.patch
+	${debpatch}/mdb-hexdump-argc.patch
+	${debpatch}/odbc-close-connections.patch
+	20070318-export-dynamic.patch
+	20070318-no-undefined.patch
+	20070318-vpath.patch
+"
+
+PKG_NAMES="${PN} libmdb1 libmdb-devel gmdb2 odbc-mdb"
+mdbtools_CONTENTS='--exclude=gmdb2.exe usr/bin/*.exe usr/share/doc/ usr/share/man/'
+libmdb1_CONTENTS='usr/bin/*-1.dll'
+libmdb_devel_CONTENTS='--exclude=*mdbodbc.* usr/include/mdb* usr/lib/'
+gmdb2_CONTENTS="etc/ usr/bin/gmdb2.exe usr/share/applications/ usr/share/gmdb/
+                usr/share/gnome/ usr/share/omf/ usr/share/pixmaps"
+odbc_mdb_CONTENTS="usr/lib/*mdbodbc.*"
+
+USE_COMMON_DOC_BUILD=yes
+CYGCONF_ARGS="--enable-sql --with-iodbc=/usr"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	newicon ${S}/src/gmdb2/pixmaps/logo.xpm gmdb2.xpm
+	make_desktop_entry gmdb2 "MDB File Viewer" gmdb2 "Office;Database" "" 'MimeType="application/msaccess"'
+}

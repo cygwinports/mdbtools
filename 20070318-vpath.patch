@@ -1,24 +1,6 @@
---- origsrc/mdbtools-0.6pre1/configure.in	2004-06-17 21:18:14.000000000 -0500
-+++ src/mdbtools-0.6pre1/configure.in	2006-12-24 23:30:35.324750000 -0600
-@@ -110,7 +110,6 @@
- fi
- 
- AC_SUBST([OPTDIRS])
--AC_CONFIG_FILES([src/Makefile])
- 
- 
- ##################################################
-@@ -176,6 +175,7 @@
- AC_OUTPUT([
- libmdb.pc
- libmdbsql.pc
-+src/Makefile
- src/util/Makefile
- src/extras/Makefile
- Makefile include/Makefile
---- origsrc/mdbtools-0.6pre1/doc/Makefile.am	2004-02-08 21:09:53.000000000 -0600
-+++ src/mdbtools-0.6pre1/doc/Makefile.am	2006-12-24 23:30:35.324750000 -0600
-@@ -34,18 +34,18 @@
+--- origsrc/mdbtools/doc/Makefile.am	2005-01-14 23:02:11.000000000 -0600
++++ src/mdbtools/doc/Makefile.am	2010-06-09 04:28:40.852443000 -0500
+@@ -34,18 +34,18 @@ install.tgz: $(srcdir)/install.sgml
  man:	mdb-tables.1 mdb-ver.1 mdb-export.1 mdb-sql.1
  
  mdb-tables.1: mdb-tables.txt
@@ -42,9 +24,9 @@
 +	- $(TXT2MAN) -P $(PRODUCT) -t $(PRODUCT) -r $(RELEASE) $< > $@
  
  
---- origsrc/mdbtools-0.6pre1/src/gmdb2/help/C/Makefile.am	2004-02-08 21:09:53.000000000 -0600
-+++ src/mdbtools-0.6pre1/src/gmdb2/help/C/Makefile.am	2006-12-24 23:38:35.340375000 -0600
-@@ -5,5 +5,5 @@
+--- origsrc/mdbtools/src/gmdb2/help/C/Makefile.am	2005-01-14 23:02:14.000000000 -0600
++++ src/mdbtools/src/gmdb2/help/C/Makefile.am	2010-06-09 04:40:51.310222800 -0500
+@@ -5,5 +5,5 @@ docname = gmdb
  lang = C
  omffile = gmdb-C.omf
  entities = legal.xml
