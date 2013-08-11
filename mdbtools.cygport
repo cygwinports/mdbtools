@@ -1,0 +1,60 @@
+inherit gnome2
+
+NAME="mdbtools"
+VERSION=0.6pre1
+RELEASE=4
+CATEGORY="Database"
+SUMMARY="Utilities for reading and querying MDB databases"
+DESCRIPTION="MDB Tools is an open source suite of libraries and utilities
+to read (and soon write) MDB database files."
+HOMEPAGE="http://mdbtools.sourceforge.net/"
+SRC_URI="mirror://sourceforge/mdbtools/mdbtools-${VERSION}.tar.gz"
+
+PATCH_URI="
+	http://pkgs.fedoraproject.org/repo/pkgs/mdbtools/mdbtools-0.6pre1-cvs20051109.patch.gz/8e603377e9a50c62957243db935c70d6/mdbtools-0.6pre1-cvs20051109.patch.gz
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/001-previous-debian-diff.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/015-allsyms.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/025-treeviewmodel.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/035-filelocals.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/038-removals.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/041-eggiconlist.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/045-aboutdialog.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/055-iconv-config.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/056-libmdb-data.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/070-unixodbc-api.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/080-size_t.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/mdb-hexdump-argc.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/odbc-close-connections.patch
+	http://patch-tracker.debian.org/patch/series/dl/mdbtools/0.5.99.0.6pre1.0.20051109-7/fix-mdb-export-usage
+	http://pkgs.fedoraproject.org/cgit/mdbtools.git/plain/mdbtools-0.6-crashes.patch
+	http://pkgs.fedoraproject.org/cgit/mdbtools.git/plain/mdbtools-0.5.99.0.6pre1.0.20051109-odbc.patch
+	20070318-export-dynamic.patch
+	20070318-no-undefined.patch
+	20070318-vpath.patch
+"
+
+PKG_NAMES="${NAME} libmdb1 libmdb-devel gmdb2 odbc-mdb"
+mdbtools_CONTENTS='--exclude=gmdb2.exe usr/bin/*.exe usr/share/doc/ usr/share/man/'
+libmdb1_CATEGORY="Libs"
+libmdb1_SUMMARY="Library for reading and querying MDB databases"
+libmdb1_CONTENTS='usr/bin/*-1.dll'
+libmdb_devel_CATEGORY="Libs"
+libmdb_devel_SUMMARY="Library for reading and querying MDB databases"
+libmdb_devel_CONTENTS='--exclude=*mdbodbc.* usr/include/mdb* usr/lib/'
+gmdb2_SUMMARY="GNOME GUI for reading and querying MDB databases"
+gmdb2_CONTENTS="etc/ usr/bin/gmdb2.exe usr/share/applications/ usr/share/gmdb/
+                usr/share/gnome/ usr/share/omf/ usr/share/pixmaps"
+odbc_mdb_SUMMARY="ODBC driver for querying MDB databases"
+odbc_mdb_CONTENTS="usr/lib/*mdbodbc.*"
+
+USE_COMMON_DOC_BUILD=yes
+WANT_AUTOMAKE=1.9
+CYGCONF_ARGS="--enable-sql --with-iodbc=/usr"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	newicon ${S}/src/gmdb2/pixmaps/logo.xpm gmdb2.xpm
+	make_desktop_entry gmdb2 "MDB File Viewer" gmdb2 "Office;Database" "" 'MimeType="application/msaccess"'
+}

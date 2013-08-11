@@ -1,6 +1,0 @@
-category: Database
-requires: libmdb1 libglib2.0-devel
-external-source: mdbtools
-sdesc: "Libraries for reading MDB databases (development)"
-ldesc: "MDB Tools is an open source suite of libraries and utilities 
-to read (and soon write) MDB database files."
